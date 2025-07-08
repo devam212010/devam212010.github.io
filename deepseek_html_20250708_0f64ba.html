@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHIVA COMMUNICATION BALAGHAT - BSNL Authorized Partner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B00;
+            --secondary: #003366;
+            --accent: #00A651;
+            --light: #FFFFFF;
+            --dark: #333333;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+        
+        #header {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 100;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .partner-info {
+            text-align: center;
+            margin: 10px 0;
+        }
+        
+        .partner-info h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: var(--light);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .partner-info p {
+            margin: 5px 0 0;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        #logo {
+            height: 50px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .language-selector {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        #hero {
+            height: 80vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #3d-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        #content {
+            max-width: 1200px;
+            margin: -100px auto 0;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 50;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 25%;
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .plan-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .plan-card-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .plan-card-header h3 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        .plan-card-header .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+        
+        .plan-card-header .speed {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .plan-card-body {
+            padding: 20px;
+        }
+        
+        .plan-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .plan-feature i {
+            color: var(--accent);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            background: linear-gradient(135deg, #FF6B00 0%, #00C853 100%);
+        }
+        
+        .call-btn {
+            background: linear-gradient(135deg, #00A651 0%, #007E3A 100%);
+            margin-top: 10px;
+        }
+        
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 10px;
+        }
+        
+        .tab-btn {
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 10px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .tab-btn:hover {
+            background: rgba(255,107,0,0.1);
+        }
+        
+        .plan-section {
+            display: none;
+        }
+        
+        .plan-section.active {
+            display: block;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="header-content">
+            <img id="logo" src="https://www.bsnl.co.in/images/bsnl_logo.png" alt="BSNL Logo">
+            
+            <div class="partner-info">
+                <h2>SHIVA COMMUNICATION BALAGHAT</h2>
+                <p>BSNL Authorized Partner</p>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#plans">Plans</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+                <select class="language-selector">
+                    <option value="en">English</option>
+                    <option value="hi">हिंदी</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    <div id="hero">
+        <div id="3d-container"></div>
+        <div class="hero-content">
+            <h1>BSNL Fiber Ultra High Speed Broadband</h1>
+            <p>Experience lightning fast internet with unlimited data and 99.9% uptime</p>
+            <a href="#plans" class="btn">View Plans</a>
+        </div>
+    </div>
+    
+    <div id="content">
+        <div id="plans" class="section-title">
+            <h2>BSNL Fiber Plans</h2>
+            <p>Choose the perfect plan for your needs</p>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showPlans('fiber')">Fiber Plans</button>
+            <button class="tab-btn" onclick="showPlans('prepaid')">Prepaid Mobile</button>
+            <button class="tab-btn" onclick="showPlans('postpaid')">Postpaid Mobile</button>
+        </div>
+        
+        <div id="fiber-plans" class="plan-section active">
+            <div class="card-container">
+                <div class="plan-card">
+                    <div class="plan-card-header">
+                        <h3>Basic</h3>
+                        <div class="price">₹499</div>
+                        <div class="speed">30 Mbps</div>
+                        <div>Unlimited Data</div>
+                    </div>
+                    <div class="plan-card-body">
+                        <div class="plan-feature">
+                            <i class="fas fa-wifi"></i>
+                            <span>30 Mbps Speed</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-infinity"></i>
+                            <span>Unlimited Data</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-phone"></i>
+                            <span>Free Voice Calls</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-tv"></i>
+                            <span>100+ OTT Apps</span>
+                        </div>
+                        <a href="https://bookmyfiber.bsnl.co.in/" class="btn">Subscribe Now</a>
+                    </div>
+                </div>
+                
+                <div class="plan-card">
+                    <div class="plan-card-header">
+                        <h3>Popular</h3>
+                        <div class="price">₹799</div>
+                        <div class="speed">100 Mbps</div>
+                        <div>Unlimited Data</div>
+                    </div>
+                    <div class="plan-card-body">
+                        <div class="plan-feature">
+                            <i class="fas fa-wifi"></i>
+                            <span>100 Mbps Speed</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-infinity"></i>
+                            <span>Unlimited Data</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-phone"></i>
+                            <span>Free Voice Calls</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-tv"></i>
+                            <span>200+ OTT Apps</span>
+                        </div>
+                        <a href="https://bookmyfiber.bsnl.co.in/" class="btn">Subscribe Now</a>
+                    </div>
+                </div>
+                
+                <div class="plan-card">
+                    <div class="plan-card-header">
+                        <h3>Premium</h3>
+                        <div class="price">₹1,299</div>
+                        <div class="speed">200 Mbps</div>
+                        <div>Unlimited Data</div>
+                    </div>
+                    <div class="plan-card-body">
+                        <div class="plan-feature">
+                            <i class="fas fa-wifi"></i>
+                            <span>200 Mbps Speed</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-infinity"></i>
+                            <span>Unlimited Data</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-phone"></i>
+                            <span>Free Voice Calls</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-tv"></i>
+                            <span>300+ OTT Apps</span>
+                        </div>
+                        <a href="https://bookmyfiber.bsnl.co.in/" class="btn">Subscribe Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="prepaid-plans" class="plan-section">
+            <div class="card-container">
+                <div class="plan-card">
+                    <div class="plan-card-header">
+                        <h3>₹199</h3>
+                        <div class="price">28 Days</div>
+                        <div class="speed">2GB/Day</div>
+                        <div>Unlimited Calls</div>
+                    </div>
+                    <div class="plan-card-body">
+                        <div class="plan-feature">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Unlimited Calls</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-database"></i>
+                            <span>2GB/Day Data</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-sms"></i>
+                            <span>100 SMS/Day</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-calendar-day"></i>
+                            <span>28 Days Validity</span>
+                        </div>
+                        <a href="https://portal.bsnl.in/myportal/quickrecharge.do" class="btn">Recharge Now</a>
+                    </div>
+                </div>
+                
+                <div class="plan-card">
+                    <div class="plan-card-header">
+                        <h3>₹299</h3>
+                        <div class="price">56 Days</div>
+                        <div class="speed">1.5GB/Day</div>
+                        <div>Unlimited Calls</div>
+                    </div>
+                    <div class="plan-card-body">
+                        <div class="plan-feature">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Unlimited Calls</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-database"></i>
+                            <span>1.5GB/Day Data</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-sms"></i>
+                            <span>100 SMS/Day</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-calendar-day"></i>
+                            <span>56 Days Validity</span>
+                        </div>
+                        <a href="https://portal.bsnl.in/myportal/quickrecharge.do" class="btn">Recharge Now</a>
+                    </div>
+                </div>
+                
+                <div class="plan-card">
+                    <div class="plan-card-header">
+                        <h3>₹549</h3>
+                        <div class="price">84 Days</div>
+                        <div class="speed">2GB/Day</div>
+                        <div>Unlimited Calls</div>
+                    </div>
+                    <div class="plan-card-body">
+                        <div class="plan-feature">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Unlimited Calls</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-database"></i>
+                            <span>2GB/Day Data</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-sms"></i>
+                            <span>100 SMS/Day</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-calendar-day"></i>
+                            <span>84 Days Validity</span>
+                        </div>
+                        <a href="https://portal.bsnl.in/myportal/quickrecharge.do" class="btn">Recharge Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="postpaid-plans" class="plan-section">
+            <div class="card-container">
+                <div class="plan-card">
+                    <div class="plan-card-header">
+                        <h3>₹399</h3>
+                        <div class="price">Monthly</div>
+                        <div class="speed">75GB Data</div>
+                        <div>Unlimited Calls</div>
+                    </div>
+                    <div class="plan-card-body">
+                        <div class="plan-feature">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Unlimited Calls</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-database"></i>
+                            <span>75GB High Speed Data</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-sms"></i>
+                            <span>100 SMS/Day</span>
+                        </div>
+                        <div class="plan-feature">
+                            <i class="fas fa-gift"></i>
+                            <span>Free BSNL to BSNL Calls</span>
+                        </div>
+                        <a href="https://portal.bsnl.in/myportal/cm.do" class="btn">Subscribe Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="services" class="section-title" style="margin-top: 80px;">
+            <h2>Our Services</h2>
+            <p>We provide complete BSNL solutions</p>
+        </div>
+        
+        <div class="card-container">
+            <div class="plan-card">
+                <div class="plan-card-header">
+                    <h3>New Connection</h3>
+                </div>
+                <div class="plan-card-body">
+                    <div class="plan-feature">
+                        <i class="fas fa-sim-card"></i>
+                        <span>New Mobile Connection</span>
+                    </div>
+                    <div class="plan-feature">
+                        <i class="fas fa-wifi"></i>
+                        <span>Broadband Installation</span>
+                    </div>
+                    <div class="plan-feature">
+                        <i class="fas fa-tv"></i>
+                        <span>IPTV Services</span>
+                    </div>
+                    <a href="#contact" class="btn">Contact Us</a>
+                </div>
+            </div>
+            
+            <div class="plan-card">
+                <div class="plan-card-header">
+                    <h3>Support</h3>
+                </div>
+                <div class="plan-card-body">
+                    <div class="plan-feature">
+                        <i class="fas fa-tools"></i>
+                        <span>Fiber Repair</span>
+                    </div>
+                    <div class="plan-feature">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Technical Support</span>
+                    </div>
+                    <div class="plan-feature">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Troubleshooting</span>
+                    </div>
+                    <a href="#contact" class="btn">Get Help</a>
+                </div>
+            </div>
+            
+            <div class="plan-card">
+                <div class="plan-card-header">
+                    <h3>Other Services</h3>
+                </div>
+                <div class="plan-card-body">
+                    <div class="plan-feature">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Port to BSNL</span>
+                    </div>
+                    <div class="plan-feature">
+                        <i class="fas fa-rupee-sign"></i>
+                        <span>Bill Payment</span>
+                    </div>
+                    <div class="plan-feature">
+                        <i class="fas fa-user-cog"></i>
+                        <span>Account Management</span>
+                    </div>
+                    <a href="#contact" class="btn">Enquire Now</a>
+                </div>
+            </div>
+        </div>
+        
+        <div id="contact" class="section-title" style="margin-top: 80px;">
+            <h2>Contact Us</h2>
+            <p>Visit our store or get in touch</p>
+        </div>
+        
+        <div class="card-container">
+            <div class="plan-card">
+                <div class="plan-card-header">
+                    <h3><i class="fas fa-map-marker-alt"></i> Our Location</h3>
+                </div>
+                <div class="plan-card-body">
+                    <p><strong>SHIVA COMMUNICATION BALAGHAT</strong></p>
+                    <p>BSNL Authorized Partner</p>
+                    <p>Near Bus Stand, Main Road</p>
+                    <p>Balaghat, Madhya Pradesh - 481001</p>
+                </div>
+            </div>
+            
+            <div class="plan-card">
+                <div class="plan-card-header">
+                    <h3><i class="fas fa-phone-alt"></i> Contact Details</h3>
+                </div>
+                <div class="plan-card-body">
+                    <div class="plan-feature">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 9407080300</span>
+                    </div>
+                    <div class="plan-feature">
+                        <i class="fas fa-envelope"></i>
+                        <span>shivacommunication80@gmail.com</span>
+                    </div>
+                    <div class="plan-feature">
+                        <i class="fas fa-clock"></i>
+                        <span>Open: 9AM - 8PM (Mon-Sat)</span>
+                    </div>
+                    <a href="tel:9407080300" class="btn call-btn">Call Us Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#plans">Plans</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="https://portal.bsnl.in/myportal/quickrecharge.do">Online Recharge</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>BSNL Services</h3>
+                <ul>
+                    <li><a href="#">Check Balance</a></li>
+                    <li><a href="#">Pay Bill</a></li>
+                    <li><a href="#">Port to BSNL</a></li>
+                    <li><a href="#">Complaints</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Fiber Support: 1800-345-1500</a></li>
+                    <li><a href="#">Mobile Support: 198</a></li>
+                    <li><a href="#">Email Support</a></li>
+                    <li><a href="#">Store Locator</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2023 SHIVA COMMUNICATION BALAGHAT - BSNL Authorized Partner. All Rights Reserved.</p>
+            <p>This is an unofficial website for information purposes only.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Three.js 3D Scene
+        const container = document.getElementById('3d-container');
+        
+        // Create scene
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x003366);
+        
+        // Create camera
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 5;
+        
+        // Create renderer
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        container.appendChild(renderer.domElement);
+        
+        // Create fiber-like cables
+        const fiberGeometry = new THREE.BufferGeometry();
+        const fiberCount = 100;
+        const positions = new Float32Array(fiberCount * 3);
+        const colors = new Float32Array(fiberCount * 3);
+        
+        for (let i = 0; i < fiberCount; i++) {
+            positions[i * 3] = (Math.random() - 0.5) * 10;
+            positions[i * 3 + 1] = (Math.random() - 0.5) * 10;
+            positions[i * 3 + 2] = (Math.random() - 0.5) * 10;
+            
+            colors[i * 3] = Math.random();
+            colors[i * 3 + 1] = Math.random();
+            colors[i * 3 + 2] = Math.random();
+        }
+        
+        fiberGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        fiberGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+        
+        const fiberMaterial = new THREE.LineBasicMaterial({ 
+            vertexColors: true,
+            transparent: true,
+            opacity: 0.6
+        });
+        
+        const fibers = new THREE.LineSegments(fiberGeometry, fiberMaterial);
+        scene.add(fibers);
+        
+        // Create data particles
+        const particleGeometry = new THREE.BufferGeometry();
+        const particleCount = 500;
+        const particlePositions = new Float32Array(particleCount * 3);
+        
+        for (let i = 0; i < particleCount; i++) {
+            particlePositions[i * 3] = (Math.random() - 0.5) * 10;
+            particlePositions[i * 3 + 1] = (Math.random() - 0.5) * 10;
+            particlePositions[i * 3 + 2] = (Math.random() - 0.5) * 10;
+        }
+        
+        particleGeometry.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
+        
+        const particleMaterial = new THREE.PointsMaterial({
+            color: 0xFFFFFF,
+            size: 0.05,
+            transparent: true,
+            opacity: 0.8
+        });
+        
+        const particles = new THREE.Points(particleGeometry, particleMaterial);
+        scene.add(particles);
+        
+        // Add BSNL logo
+        const loader = new THREE.TextureLoader();
+        loader.load('https://www.bsnl.co.in/images/bsnl_logo.png', function(texture) {
+            const logoGeometry = new THREE.PlaneGeometry(3, 1.5);
+            const logoMaterial = new THREE.MeshBasicMaterial({
+                map: texture,
+                transparent: true,
+                side: THREE.DoubleSide
+            });
+            const logo = new THREE.Mesh(logoGeometry, logoMaterial);
+            logo.position.z = 0;
+            scene.add(logo);
+        });
+        
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            fibers.rotation.x += 0.001;
+            fibers.rotation.y += 0.002;
+            
+            particles.rotation.x += 0.0005;
+            particles.rotation.y -= 0.0005;
+            
+            renderer.render(scene, camera);
+        }
+        
+        animate();
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        
+        // Plan switching function
+        function showPlans(planType) {
+            document.querySelectorAll('.plan-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(planType + '-plans').classList.add('active');
+            
+            document.querySelectorAll('.tabs .tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Scroll to plans section
+            document.getElementById('plans').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // GSAP animations
+        gsap.from('.hero-content h1', { 
+            duration: 1, 
+            y: 50, 
+            opacity: 0, 
+            delay: 0.5,
+            ease: 'power3.out'
+        });
+        
+        gsap.from('.hero-content p', { 
+            duration: 1, 
+            y: 50, 
+            opacity: 0, 
+            delay: 0.8,
+            ease: 'power3.out'
+        });
+        
+        gsap.from('.hero-content .btn', { 
+            duration: 1, 
+            y: 50, 
+            opacity: 0, 
+            delay: 1.1,
+            ease: 'power3.out'
+        });
+        
+        gsap.from('.plan-card', { 
+            duration: 0.8, 
+            y: 50, 
+            opacity: 0, 
+            stagger: 0.1,
+            scrollTrigger: {
+                trigger: '#plans',
+                start: 'top 80%'
+            }
+        });
+    </script>
+</body>
+</html>
